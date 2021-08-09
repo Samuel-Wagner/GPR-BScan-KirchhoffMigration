@@ -238,22 +238,27 @@ if(perform_timing_test)
 
     % vector of "N" to measure time taken
     Nt = 30;
-    N_tests = linspace(32, 512, Nt);
+    pixel_widths = logspace(log10(2e-2), log10(0.5e-3), Nt);
     times = zeros(1,Nt);
     progressbar('Timing test using manual migration');
     for ii = 1:Nt
         % function prototype
-        % I = Bscan_migration_v3(B, h, er, t, x, tx_pos, rx_pos, xQ, zQ, progress)    
-        xC = linspace(0,max(x),N_tests(ii));
-        zC = linspace(1e-3,40e-2,N_tests(ii));
+        % I = Bscan_migration_v3(B, h, er, t, x, tx_pos, rx_pos, xQ, zQ, progress)  
+        xC = 0:pixel_widths(ii):max(x);
+        zC = 1e-3:pixel_widths(ii):40e-2;
         tic;
         I = Bscan_migration_v3(D, h, er, t, x, tx_pos, rx_pos, xC, zC, 0);
         times(ii)=toc;
         progressbar(ii/Nt);
     end
     
-    figure(); hold on; grid on;
-    plot(N_tests,times,'kx-');
-    xlabel('xC,zC length');
+    figure(); 
+    semilogx(pixel_widths.*1e3,times,'kx-'); hold on; grid on;
+    xlabel('Pixel width (mm)');
     ylabel('Time taken (s)');
+    set(gca,'XTickLabel',get(gca,'xtick'));
+    aa=gca;
+    aa.GridColor=[0.1 0.1 0.1];
+    aa.GridAlpha=0.6;
+    aa.MinorGridAlpha=0.6;
 end
