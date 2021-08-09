@@ -5,6 +5,7 @@ This is an implementation of 2D Kirchhoff Migration. To run, run main.m.
 The real important scripts are:
 1. utils/Bscan_migration_v3.m (actual Kirchhoff Migration implementation)
 2. utils/GPR_transmission_angles_v4.m (quick-solver for GPR transmission angles)
+3. 
 The rest are useful, nice scripts that help process data or help with display.
 
 To run, run main.m and read the comments there to change the data source/etc.
