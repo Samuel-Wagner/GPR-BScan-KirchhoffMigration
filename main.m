@@ -24,7 +24,7 @@ prettygraphs;
 
 %% read in data
 data_source_dir = ".\data\";     % directory of data
-data_source_fn  = "200ps_2.mat"; % exact filename of scan
+data_source_fn  = "50ps_1.mat"; % exact filename of scan
 perform_timing_test = 1;         % do you want to do a timing test (time_taken vs. N)? set to 0 if no
 
 % load in data. the data has been saved as a "Scan" object.
