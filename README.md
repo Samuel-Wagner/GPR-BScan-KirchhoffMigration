@@ -19,5 +19,5 @@ Migration before and after a matched-filter
 ![Migrated normal and matched-filtered data](https://github.com/Samuel-Wagner/GPR-BScan-KirchhoffMigration/blob/main/imgs/fig3.png)
 Horizontal and Vertical Resolution Slices of Target 2 with and without matched-filter
 ![Horizontal and Vertical Target Slices](https://github.com/Samuel-Wagner/GPR-BScan-KirchhoffMigration/blob/main/imgs/fig4.png)
-Timing test versus calculation vector length (N^2) (results will vary!)
+Timing test versus pixel width (40cm x 1.3m calculation domain)
 ![Timing test](https://github.com/Samuel-Wagner/GPR-BScan-KirchhoffMigration/blob/main/imgs/fig5.png)
